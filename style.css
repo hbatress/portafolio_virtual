@@ -1,0 +1,220 @@
+body {
+    margin: 0;
+    padding: 0;
+    color: white;
+}
+
+.background-image {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('./fondo4.jpeg');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    /* Enviar el fondo detrás de todo */
+}
+
+header {
+    font-family: 'Rakkas', cursive;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background-color: black;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    margin-left: 50px;
+}
+
+nav ul li {
+    display: inline;
+    margin-right: 1rem;
+}
+
+nav ul li a {
+    color: #ffffff;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    transition: color 0.3s ease;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+
+nav ul li a:hover {
+    color: #33f109;
+}
+
+section {
+    padding: 2rem;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+
+footer {
+    background-color: #fefefe;
+    color: #000000;
+    text-align: center;
+    padding: 1rem;
+}
+
+#sobre-mi {
+    color: white;
+    font-family: "Vast Shadow", serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 60px 0px 0px 0px;
+    padding: 15px 150px 0px 150px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    flex-direction: column;
+}
+
+#sobre-mi img {
+    width: 20%;
+    border-radius: 50%;
+}
+
+#sobre-mi div {
+    flex: 1;
+    padding-left: 20px;
+}
+
+#sobre-mi h1 {
+    margin: 1px 1px 1px 2px;
+    font-size: 73px;
+    text-align: center;
+
+}
+
+#sobre-mi p {
+    font-size: 18px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+#sobre-mi h2 {
+    margin: 1px 1px 1px 2px;
+    font-size: 25px;
+    text-align: center;
+}
+
+
+/* Estilos para la sección de experiencia en programación */
+.container {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.lenguaje {
+    width: calc(50% - 10px); /* Para tener dos columnas y espacio entre ellas */
+    margin-bottom: 20px;
+    padding: 10px;
+    box-sizing: border-box;
+
+    border-radius: 5px;
+}
+
+.barra-progreso {
+    position: relative;
+    height: 20px;
+    background-color: #ddd;
+    border-radius: 10px;
+    margin-top: 5px;
+}
+
+.progreso {
+    position: absolute;
+    height: 100%;
+    border-radius: 10px;
+    background-color: #007bff;
+}
+
+.porcentaje {
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #f61b02;
+    font-weight: bold;
+}
+
+.nombre-lenguaje {
+    font-weight: bold;
+}
+
+    /* Estilos para el contenedor de los elementos */
+    .contenedor-info {
+        
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between; /* Ajusta el espacio entre las columnas */
+        margin: 0px;
+align-content: center;
+    }
+
+    /* Estilos para cada columna */
+    .columna {
+        width: calc(33.33% - 20px); /* Calcula el ancho de cada columna */
+        text-align: center;
+    }
+
+    /* Estilos para cada elemento */
+    .info-item {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        justify-content: center;
+    }
+
+    /* Estilos para el icono de Material Symbols Outlined */
+    .material-symbols-outlined {
+        font-family: 'Material Symbols Outlined'; /* Debes incluir la fuente en tu proyecto */
+        font-size: 24px; /* Tamaño del icono */
+    }
+
+    /* Estilos para el texto */
+    .info-texto {
+        font-size: 16px;
+        font-weight: bold; 
+    }
+
+    /* Estilos para el enlace */
+    .info-link {
+        color: #333;
+        text-decoration: none;
+    }
+
+
+    
+    .proyectos-container {
+        display: flex;
+        overflow: hidden;
+        width: 100%;
+    }
+    
+    .proyecto-container {
+        flex: 0 0 auto; /* Tamaño automático para cada proyecto */
+        margin-right: 10px; /* Espacio entre cada proyecto */
+    }
+    
+    .proyecto {
+        width: 100%; /* Para ocupar todo el espacio del contenedor */
+        transition: transform 1s ease; /* Duración de la animación ajustada a 1 segundo */
+    }
+    
+    .moviendo {
+        transform: translateX(-100%); /* Mover hacia la izquierda */
+    }
+    
