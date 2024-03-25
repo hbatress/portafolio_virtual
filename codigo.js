@@ -15,8 +15,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     const proyectosContainer = document.querySelector('.proyectos-container');
-    const proyectos = proyectosContainer.querySelectorAll('.proyecto');
-
+    const proyectos = Array.from(proyectosContainer.querySelectorAll('.proyecto'));
     let currentIndex = 0;
     let timerId = null;
 
@@ -35,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
     function render() {
         proyectosContainer.innerHTML = '';
-        const currentProjects = Array.from(proyectos).slice(currentIndex, currentIndex + 4);
+        const currentProjects = proyectos.slice(currentIndex, currentIndex + 4);
         currentProjects.forEach(project => {
             proyectosContainer.appendChild(project.cloneNode(true));
         });
