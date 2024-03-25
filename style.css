@@ -117,7 +117,8 @@ footer {
 }
 
 .lenguaje {
-    width: calc(50% - 10px); /* Para tener dos columnas y espacio entre ellas */
+    width: calc(50% - 10px);
+    /* Para tener dos columnas y espacio entre ellas */
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
@@ -153,88 +154,122 @@ footer {
     font-weight: bold;
 }
 
-    /* Estilos para el contenedor de los elementos */
-    .contenedor-info {
-        
-        display: flex;
-        flex-wrap: wrap;
-        gap: 20px;
-        justify-content: space-between; /* Ajusta el espacio entre las columnas */
-        margin: 0px;
-align-content: center;
-    }
+/* Estilos para el contenedor de los elementos */
+.contenedor-info {
 
-    /* Estilos para cada columna */
-    .columna {
-        width: calc(33.33% - 20px); /* Calcula el ancho de cada columna */
-        text-align: center;
-    }
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: space-between;
+    /* Ajusta el espacio entre las columnas */
+    margin: 0px;
+    align-content: center;
+}
 
-    /* Estilos para cada elemento */
-    .info-item {
-        display: flex;
-        align-items: center;
-        gap: 10px;
-        justify-content: center;
-    }
+/* Estilos para cada columna */
+.columna {
+    width: calc(33.33% - 20px);
+    /* Calcula el ancho de cada columna */
+    text-align: center;
+}
 
-    /* Estilos para el icono de Material Symbols Outlined */
-    .material-symbols-outlined {
-        font-family: 'Material Symbols Outlined'; /* Debes incluir la fuente en tu proyecto */
-        font-size: 24px; /* Tamaño del icono */
-    }
+/* Estilos para cada elemento */
+.info-item {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    justify-content: center;
+}
 
-    /* Estilos para el texto */
-    .info-texto {
-        font-size: 16px;
-        font-weight: bold; 
-    }
+/* Estilos para el icono de Material Symbols Outlined */
+.material-symbols-outlined {
+    font-family: 'Material Symbols Outlined';
+    /* Debes incluir la fuente en tu proyecto */
+    font-size: 24px;
+    /* Tamaño del icono */
+}
 
-    /* Estilos para el enlace */
-    .info-link {
-        color: #333;
-        text-decoration: none;
-    }
+/* Estilos para el texto */
+.info-texto {
+    font-size: 16px;
+    font-weight: bold;
+}
 
-
-    
-    .proyectos-container {
-        display: flex;
-        overflow: hidden;
-        width: 100%;
-    }
-    
-    .proyecto-container {
-        flex: 0 0 auto; /* Tamaño automático para cada proyecto */
-        margin-right: 10px; /* Espacio entre cada proyecto */
-    }
-    
-    .proyecto {
-        width: 100%; /* Para ocupar todo el espacio del contenedor */
-        transition: transform 1s ease; /* Duración de la animación ajustada a 1 segundo */
-    }
-    
-    .moviendo {
-        transform: translateX(-100%); /* Mover hacia la izquierda */
-    }
-    
+/* Estilos para el enlace */
+.info-link {
+    color: #333;
+    text-decoration: none;
+}
 
 
-    /* Cambiar el color de la barra de desplazamiento */
+
+.proyectos-container {
+    width: 100%;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+.proyecto {
+    display: inline-block;
+    width: calc(25% - 20px);
+    /* 25% para mostrar 4 proyectos a la vez */
+    margin-right: 20px;
+    /* Espacio entre proyectos */
+    text-align: center;
+}
+
+.descripcion {
+    display: none;
+    margin-top: 10px;
+}
+
+
+/* Cambiar el color de la barra de desplazamiento */
 ::-webkit-scrollbar {
     width: 12px;
-  }
-  
-  ::-webkit-scrollbar-track {
+}
+
+::-webkit-scrollbar-track {
     background: #f1f1f1;
-  }
-  
-  ::-webkit-scrollbar-thumb {
+}
+
+::-webkit-scrollbar-thumb {
     background: #888;
     border-radius: 10px;
-  }
-  
-  ::-webkit-scrollbar-thumb:hover {
+}
+
+::-webkit-scrollbar-thumb:hover {
     background: #555;
-  }
-  
+}
+
+.proyecto img {
+    max-width: 250px;
+    /* Ajusta el tamaño máximo de la imagen */
+    height: auto;
+    /* Mantiene la proporción de aspecto */
+}
+
+/* Estilos para los botones */
+    .btn {
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        font-size: 16px;
+        margin: 4px 2px;
+        cursor: pointer;
+        border-radius: 4px;
+    }
+
+    /* Estilos específicos para el botón de "Más información" */
+    .mostrar-info {
+        background-color: #008CBA;
+    }
+
+    /* Estilos específicos para el botón de "Cerrar" */
+    .cerrar-info {
+        background-color: #f44336;
+    }

@@ -1,10 +1,8 @@
-document.addEventListener("DOMContentLoaded", function() {
+document.addEventListener('DOMContentLoaded', function () {
     console.log("El DOM ha sido cargado.");
 
-    // Obtener todos los elementos con clase "barra-progreso"
     const barrasProgreso = document.querySelectorAll(".barra-progreso");
 
-    // Iterar sobre cada barra de progreso y ajustar el ancho de la barra de progreso interna
     barrasProgreso.forEach(barra => {
         const porcentajeElement = barra.querySelector(".porcentaje");
         if (porcentajeElement) {
@@ -15,32 +13,60 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         }
     });
-});
-
-
-document.addEventListener('DOMContentLoaded', function () {
-    console.log("El DOM ha sido cargado.");
 
     const proyectosContainer = document.querySelector('.proyectos-container');
-    const proyectos = document.querySelectorAll('.proyecto');
-    const espacioEntreProyectos = 20; // Espacio entre cada proyecto en píxeles
+    const proyectos = proyectosContainer.querySelectorAll('.proyecto');
+
     let currentIndex = 0;
+    let timerId = null;
 
-    function moveProjects() {
-        const proyectoActual = proyectos[currentIndex];
-        const anchoProyecto = proyectoActual.offsetWidth + espacioEntreProyectos;
-
-        proyectosContainer.style.transition = 'transform 1s ease';
-        proyectosContainer.style.transform = `translateX(-${anchoProyecto}px)`;
-
-        setTimeout(() => {
-            proyectoActual.parentNode.appendChild(proyectoActual);
-            proyectosContainer.style.transition = 'none';
-            proyectosContainer.style.transform = 'translateX(0)';
-            currentIndex = (currentIndex + 1) % proyectos.length;
-        }, 1000); // Esperar 1 segundo antes de mover el proyecto
+    function startTimer() {
+        timerId = setInterval(moveNext, 3000);
     }
 
-    // Iniciar la animación de los proyectos
-    setInterval(moveProjects, 3000); // Cambiar de proyecto cada 3 segundos
+    function stopTimer() {
+        clearInterval(timerId);
+    }
+
+    function moveNext() {
+        currentIndex = (currentIndex + 1) % (proyectos.length - 3); // Para que se detenga al final
+        render();
+    }
+
+    function render() {
+        proyectosContainer.innerHTML = '';
+        const currentProjects = Array.from(proyectos).slice(currentIndex, currentIndex + 4);
+        currentProjects.forEach(project => {
+            proyectosContainer.appendChild(project.cloneNode(true));
+        });
+
+        // Asignar eventos a los nuevos botones
+        asignarEventos();
+    }
+
+    function asignarEventos() {
+        const btnMostrarInfo = proyectosContainer.querySelectorAll('.mostrar-info');
+        const btnCerrarInfo = proyectosContainer.querySelectorAll('.cerrar-info');
+        const descripciones = proyectosContainer.querySelectorAll('.descripcion');
+
+        btnMostrarInfo.forEach((btnMostrar, index) => {
+            btnMostrar.addEventListener('click', () => {
+                descripciones[index].style.display = 'block';
+                btnMostrar.style.display = 'none';
+                stopTimer(); // Detener el carrusel al mostrar descripción
+            });
+        });
+
+        btnCerrarInfo.forEach((btnCerrar, index) => {
+            btnCerrar.addEventListener('click', () => {
+                descripciones[index].style.display = 'none';
+                btnMostrarInfo[index].style.display = 'block';
+                startTimer(); // Iniciar el carrusel al cerrar descripción
+            });
+        });
+    }
+
+    // Iniciar el carrusel y asignar eventos al cargar la página
+    startTimer();
+    asignarEventos();
 });
