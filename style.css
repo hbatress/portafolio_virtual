@@ -218,3 +218,23 @@ align-content: center;
         transform: translateX(-100%); /* Mover hacia la izquierda */
     }
     
+
+
+    /* Cambiar el color de la barra de desplazamiento */
+::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: #555;
+  }
+  
