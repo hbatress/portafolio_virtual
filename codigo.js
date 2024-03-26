@@ -60,7 +60,11 @@ document.addEventListener('DOMContentLoaded', function () {
             btnCerrar.addEventListener('click', () => {
                 descripciones[index].style.display = 'none';
                 btnMostrarInfo[index].style.display = 'block';
-                startTimer(); // Iniciar el carrusel al cerrar descripción
+
+                // Reiniciar el carrusel después de un breve retraso
+                setTimeout(() => {
+                    startTimer();
+                }, 100); // 100 milisegundos de retraso para asegurar que se reinicie correctamente
             });
         });
     }
