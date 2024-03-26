@@ -14,7 +14,6 @@ body {
     background-size: cover;
     background-position: center;
     z-index: -1;
-    /* Enviar el fondo detrás de todo */
 }
 
 header {
@@ -61,11 +60,14 @@ section {
 
 
 footer {
-    background-color: #fefefe;
-    color: #000000;
+    background-color: #f2f2f2; /* Color de fondo neutro */
+    color: #333333; /* Color del texto */
     text-align: center;
     padding: 1rem;
-}
+    border-top: 2px solid #333333; /* Borde superior */
+
+  }
+  
 
 #sobre-mi {
     color: white;
@@ -110,7 +112,7 @@ footer {
 }
 
 
-/* Estilos para la sección de experiencia en programación */
+
 .container {
     display: flex;
     flex-wrap: wrap;
@@ -118,7 +120,7 @@ footer {
 
 .lenguaje {
     width: calc(50% - 10px);
-    /* Para tener dos columnas y espacio entre ellas */
+
     margin-bottom: 20px;
     padding: 10px;
     box-sizing: border-box;
@@ -154,26 +156,23 @@ footer {
     font-weight: bold;
 }
 
-/* Estilos para el contenedor de los elementos */
 .contenedor-info {
 
     display: flex;
     flex-wrap: wrap;
     gap: 20px;
     justify-content: space-between;
-    /* Ajusta el espacio entre las columnas */
+
     margin: 0px;
     align-content: center;
 }
 
-/* Estilos para cada columna */
+
 .columna {
     width: calc(33.33% - 20px);
-    /* Calcula el ancho de cada columna */
     text-align: center;
 }
 
-/* Estilos para cada elemento */
 .info-item {
     display: flex;
     align-items: center;
@@ -181,41 +180,54 @@ footer {
     justify-content: center;
 }
 
-/* Estilos para el icono de Material Symbols Outlined */
+
 .material-symbols-outlined {
     font-family: 'Material Symbols Outlined';
-    /* Debes incluir la fuente en tu proyecto */
+
     font-size: 24px;
-    /* Tamaño del icono */
+
 }
 
-/* Estilos para el texto */
+
 .info-texto {
     font-size: 16px;
     font-weight: bold;
 }
 
-/* Estilos para el enlace */
 .info-link {
     color: #333;
     text-decoration: none;
 }
 
+#titulo {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+    text-align: center;
+    margin-bottom: 20px;
+  }
+  
 
 
 .proyectos-container {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
+    color: black;
+
 }
 
 .proyecto {
     display: inline-block;
     width: calc(25% - 20px);
-    /* 25% para mostrar 4 proyectos a la vez */
-    margin-right: 20px;
-    /* Espacio entre proyectos */
+    margin-right: 6px;
     text-align: center;
+    margin-bottom: 1px; /* Nuevo margen inferior para separar proyectos */
+  border: 1px solid #ccc; /* Borde */
+  border-radius: 8px; /* Bordes redondeados */
+  background-color: #f9f9f9; /* Fondo del marco */
+  padding: 7px; /* Espaciado interno */
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
 }
 
 .descripcion {
@@ -223,6 +235,15 @@ footer {
     margin-top: 10px;
 }
 
+.proyecto p {
+    font-size: 16px; /* Tamaño de fuente para el párrafo */
+    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
+    color: #666; /* Color del texto */
+    margin: 10px 0; /* Margen para separar el contenido del borde */
+    word-wrap: break-word; /* Romper palabras para ajustarse al contenedor */
+    white-space: normal; /* Permitir salto de línea */
+    text-align: justify; /* Alinear el texto justificado */
+  }
 
 /* Cambiar el color de la barra de desplazamiento */
 ::-webkit-scrollbar {
@@ -244,32 +265,41 @@ footer {
 
 .proyecto img {
     max-width: 250px;
-    /* Ajusta el tamaño máximo de la imagen */
     height: auto;
-    /* Mantiene la proporción de aspecto */
 }
-
-/* Estilos para los botones */
-    .btn {
-        background-color: #4CAF50;
-        color: white;
-        border: none;
-        padding: 10px 20px;
-        text-align: center;
-        text-decoration: none;
-        display: inline-block;
-        font-size: 16px;
-        margin: 4px 2px;
-        cursor: pointer;
-        border-radius: 4px;
-    }
 
     /* Estilos específicos para el botón de "Más información" */
     .mostrar-info {
-        background-color: #008CBA;
-    }
+        background-color: #4CAF50;
+        border: 2px solid #4CAF50;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .mostrar-info:hover {
+        background-color: #388E3C;
+        border-color: #388E3C;
+      }
+      
 
     /* Estilos específicos para el botón de "Cerrar" */
     .cerrar-info {
         background-color: #f44336;
-    }
+        border: 2px solid #f44336;
+        color: #fff;
+        padding: 10px 20px;
+        font-size: 16px;
+        border-radius: 5px;
+        cursor: pointer;
+        box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      
+      .cerrar-info:hover {
+        background-color: #d32f2f;
+        border-color: #d32f2f;
+      }
+      
