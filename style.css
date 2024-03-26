@@ -209,26 +209,31 @@ footer {
   
 
 
-.proyectos-container {
+  .proyectos-container {
     width: 100%;
     overflow: hidden;
     white-space: nowrap;
     color: black;
-
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 10px;
+    overflow-x: auto;
 }
 
 .proyecto {
+    flex: 1 0 calc(25% - 20px); 
     display: inline-block;
     width: calc(25% - 20px);
-    margin-right: 6px;
+   /* margin-right: 6px;*/
     text-align: center;
-    margin-bottom: 1px; /* Nuevo margen inferior para separar proyectos */
-  border: 1px solid #ccc; /* Borde */
-  border-radius: 8px; /* Bordes redondeados */
-  background-color: #f9f9f9; /* Fondo del marco */
-  padding: 7px; /* Espaciado interno */
-  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+    margin-bottom: 1px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    padding: 15px 5px 10px 5px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
 }
+
 
 .descripcion {
     display: none;
@@ -236,19 +241,19 @@ footer {
 }
 
 .proyecto p {
-    font-size: 16px; /* Tamaño de fuente para el párrafo */
-    line-height: 1.5; /* Altura de línea para mejorar la legibilidad */
-    color: #666; /* Color del texto */
-    margin: 10px 0; /* Margen para separar el contenido del borde */
-    word-wrap: break-word; /* Romper palabras para ajustarse al contenedor */
-    white-space: normal; /* Permitir salto de línea */
-    text-align: justify; /* Alinear el texto justificado */
-  }
+    font-size: 16px;
+    line-height: 1.5;
+    color: #666;
+    margin: 10px 0;
+    word-wrap: break-word;
+    white-space: normal;
+    text-align: justify;
+}
 
-/* Cambiar el color de la barra de desplazamiento */
 ::-webkit-scrollbar {
     width: 12px;
 }
+
 
 ::-webkit-scrollbar-track {
     background: #f1f1f1;
